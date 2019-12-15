@@ -1,0 +1,50 @@
+﻿@model WeddingApp.Models.Function
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Function</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WeddingPackage.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeddingPackage.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FunctionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FunctionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
