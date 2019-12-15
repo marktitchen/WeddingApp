@@ -61,9 +61,11 @@ namespace WeddingApp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
        
-        //public DbSet<Event> Events { get; set; }
+        
         public DbSet<WeddingPackage> WeddingPackages { get; set; }
         public DbSet<Function> Functions { get; set; }
+        public DbSet<Enquiry> Enquiries { get; set; }
+        public DbSet<EnquiryCategory> EnquiryCategories { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

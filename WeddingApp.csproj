@@ -181,6 +181,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EnquiryCategoryController.cs" />
+    <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -192,8 +194,14 @@
     <Compile Include="Migrations\201912141130133_AddFunctionAndWeddingPackagesClass.Designer.cs">
       <DependentUpon>201912141130133_AddFunctionAndWeddingPackagesClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912151924355_AddEnquiryAndEnquiryCategoryClass.cs" />
+    <Compile Include="Migrations\201912151924355_AddEnquiryAndEnquiryCategoryClass.Designer.cs">
+      <DependentUpon>201912151924355_AddEnquiryAndEnquiryCategoryClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Enquiry.cs" />
+    <Compile Include="Models\EnquiryCategory.cs" />
     <Compile Include="Models\Function.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IndividualButtonPartial.cs" />
@@ -273,6 +281,16 @@
     <Content Include="Views\Function\Details.cshtml" />
     <Content Include="Views\Function\Edit.cshtml" />
     <Content Include="Views\Function\Index.cshtml" />
+    <Content Include="Views\EnquiryCategory\Create.cshtml" />
+    <Content Include="Views\EnquiryCategory\Delete.cshtml" />
+    <Content Include="Views\EnquiryCategory\Details.cshtml" />
+    <Content Include="Views\EnquiryCategory\Edit.cshtml" />
+    <Content Include="Views\EnquiryCategory\Index.cshtml" />
+    <Content Include="Views\Enquiry\Create.cshtml" />
+    <Content Include="Views\Enquiry\Delete.cshtml" />
+    <Content Include="Views\Enquiry\Details.cshtml" />
+    <Content Include="Views\Enquiry\Edit.cshtml" />
+    <Content Include="Views\Enquiry\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +311,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912141130133_AddFunctionAndWeddingPackagesClass.resx">
       <DependentUpon>201912141130133_AddFunctionAndWeddingPackagesClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912151924355_AddEnquiryAndEnquiryCategoryClass.resx">
+      <DependentUpon>201912151924355_AddEnquiryAndEnquiryCategoryClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
