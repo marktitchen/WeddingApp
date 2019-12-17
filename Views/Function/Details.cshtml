@@ -4,47 +4,65 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Function</h4>
+<div class="form-horizontal">
+    <h3>Function Details</h3>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.WeddingPackage.Name)
-        </dt>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
 
-        <dd>
-            @Html.DisplayFor(model => model.WeddingPackage.Name)
-        </dd>
+    <div class="row" style="border:1px solid #bbb9b9; border-radius:5px;padding-top:25px;">
+        <div class="col-sm-10">
+            <fieldset disabled>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FunctionDate)
-        </dt>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FunctionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.FunctionDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FunctionDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FunctionDate)
-        </dd>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.DateAdded, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </dt>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateAdded)
-        </dd>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.WeddingPackageId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.WeddingPackageId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.WeddingPackageId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
+                
+            </fieldset>
+         </div>
+        <div class="col-sm-2">
+            <div>
 
-    </dl>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Partial("_EditButtonPartial", Model.Id)
+            @Html.Partial("_BackToListButtonPartial")
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

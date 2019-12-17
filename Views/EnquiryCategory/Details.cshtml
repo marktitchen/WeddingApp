@@ -1,26 +1,30 @@
 ﻿@model WeddingApp.Models.EnquiryCategory
 
-@{
-    ViewBag.Title = "Details";
-}
+	@{
+		ViewBag.Title = "Details";
+	}
 
-<h2>Details</h2>
-
-<div>
-    <h4>EnquiryCategory</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+	<div>
+		<h4>EnquiryCategory Details</h4>
+		<hr />
+		<div class="form-border">
+			<fieldset disabled>
+				<div class="row" style="padding-bottom:5px;padding-top:5px;">
+					<div class="col-md-2">
+						@*@Html.DisplayNameFor(model => model.Name)*@
+						@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+					</div>
+					<div class="col-md-10">
+						@*@Html.DisplayFor(model => model.Name)*@
+						@Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<br />
+	<div>
+		@Html.Partial("_BackToListButtonPartial")
+		@Html.Partial("_EditButtonPartial", Model.Id)
+	</div>
+	

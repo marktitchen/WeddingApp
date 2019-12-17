@@ -16,6 +16,9 @@ namespace WeddingApp.Models
 		public int? WeddingPackageId { get; set; }
 		public int? EventId { get; set; }
 		public int? CustomerId { get; set; }
+		public int? EnquiryCategoryId { get; set; }
+		public int? FunctionId { get; set; }
+		public int? EnquiryId { get; set; }
 
 		public string ActionParameter
 		{
@@ -34,6 +37,18 @@ namespace WeddingApp.Models
 				if (WeddingPackageId != null && WeddingPackageId > 0)
 				{
 					param.Append(String.Format("{0}", WeddingPackageId));
+				}
+				if (EnquiryCategoryId != null && EnquiryCategoryId > 0)
+				{
+					param.Append(String.Format("{0}", EnquiryCategoryId));
+				}
+				if (FunctionId != null && FunctionId > 0)
+				{
+					param.Append(String.Format("{0}", FunctionId));
+				}
+				if (EnquiryId != null && EnquiryId > 0)
+				{
+					param.Append(String.Format("{0}", EnquiryId));
 				}
 
 				return param.ToString();

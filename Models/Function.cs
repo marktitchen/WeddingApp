@@ -24,6 +24,11 @@ namespace WeddingApp.Models
 		[Required]
 		public int WeddingPackageId { get; set; }
 		public WeddingPackage WeddingPackage { get; set; }
+
+
+
+
+
 	}
 }
 	

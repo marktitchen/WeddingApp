@@ -8,6 +8,8 @@ namespace WeddingApp.Controllers
 {
 	public class HomeController : Controller
 	{
+		
+		
 		public ActionResult Index()
 		{
 			return View();
@@ -23,6 +25,34 @@ namespace WeddingApp.Controllers
 		public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
+
+			return View();
+		}
+
+		public ActionResult Function()
+		{
+			
+
+			return View();
+		}
+
+		public ActionResult Enquiry()
+		{
+
+
+			return View();
+		}
+
+		public ActionResult EnquiryCategory()
+		{
+
+
+			return View();
+		}
+
+		public ActionResult WeddingPackage()
+		{
+
 
 			return View();
 		}
