@@ -7,7 +7,7 @@ namespace WeddingApp.Models.ViewModel
 {
 	public class FunctionViewModel
 	{
-		public IEnumerable<WeddingPackage> WeddingPackage { get; set; }
+		public IEnumerable<WeddingPackage> WeddingPackages { get; set; }
 		public Function Function { get; set; }
 	}
 }

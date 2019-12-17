@@ -1,65 +1,76 @@
-﻿@model WeddingApp.Models.Function
+﻿@model WeddingApp.Models.ViewModel.FunctionViewModel
+
 
 @{
-    ViewBag.Title = "Delete";
+	ViewBag.Title = "Delete";
 }
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
+	@Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h3>Delete Function</h3>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+	<div class="form-horizontal">
+		<h3>Delete Function</h3>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.Function.Id)
 
-        <div class="row" style="border:1px solid #bbb9b9; border-radius:5px;padding-top:25px;">
+		<div class="row" style="border:1px solid #bbb9b9; border-radius:5px;padding-top:25px;">
 			<div class="col-sm-10">
 				<fieldset disabled>
 					<div class="form-group">
-						@Html.LabelFor(model => model.WeddingPackageId, htmlAttributes: new { @class = "control-label col-md-2" })
+						@Html.LabelFor(model => model.Function.WeddingPackageId, htmlAttributes: new { @class = "control-label col-md-2" })
 						<div class="col-md-10">
-							@Html.EditorFor(model => model.WeddingPackageId, new { htmlAttributes = new { @class = "form-control" } })
-							@Html.ValidationMessageFor(model => model.WeddingPackageId, "", new { @class = "text-danger" })
-						</div>
-					</div>
-					<div class="form-group">
-						@Html.LabelFor(model => model.FunctionDate, htmlAttributes: new { @class = "control-label col-md-2" })
-						<div class="col-md-10">
-							@Html.TextBoxFor(model => model.FunctionDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
-							@Html.ValidationMessageFor(model => model.FunctionDate, "", new { @class = "text-danger" })
+							@Html.EditorFor(model => model.Function.WeddingPackageId, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.Function.WeddingPackageId, "", new { @class = "text-danger" })
 						</div>
 					</div>
 
 					<div class="form-group">
-						@Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
+						@Html.LabelFor(model => model.Function.WeddingPackage.Name, htmlAttributes: new { @class = "control-label col-md-2" })
 						<div class="col-md-10">
-							@Html.TextBoxFor(model => model.DateAdded, "{0:dd/MM/yyyy}", new { @class = "form-control" })
-							@Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
+							@Html.EditorFor(model => model.Function.WeddingPackage.Name, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.Function.WeddingPackage.Name, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Function.FunctionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.TextBoxFor(model => model.Function.FunctionDate, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.Function.FunctionDate, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Function.DateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.TextBoxFor(model => model.Function.DateAdded, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.Function.DateAdded, "", new { @class = "text-danger" })
 						</div>
 					</div>
 					<div class="form-group">
-						@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+						@Html.LabelFor(model => model.Function.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
 						<div class="col-md-10">
-							@Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
-							@Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+							@Html.EditorFor(model => model.Function.Notes, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.Function.Notes, "", new { @class = "text-danger" })
 						</div>
 					</div>
 				</fieldset>
-			</div>          
-            <div class="col-sm-2">
-                <div>
+			</div>
+			<div class="col-sm-2">
+				<div>
 
-                </div>
-            </div>
-        </div>
-        <br />
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
-                @Html.Partial("_BackToListButtonPartial")
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="form-group">
+			<div class="col-md-10">
+				<input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+				@Html.Partial("_BackToListButtonPartial")
+			</div>
+		</div>
+	</div>
 }

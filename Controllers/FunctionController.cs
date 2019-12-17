@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WeddingApp.Models;
+using WeddingApp.Models.ViewModel;
 
 namespace WeddingApp.Controllers
 {
@@ -33,14 +34,25 @@ namespace WeddingApp.Controllers
             {
                 return HttpNotFound();
             }
-            return View(function);
+
+            var model = new FunctionViewModel
+            {
+                Function = function,
+                WeddingPackages = db.WeddingPackages.ToList()
+            };
+            
+            return View(model);
         }
 
         // GET: Function/Create
         public ActionResult Create()
         {
-            ViewBag.WeddingPackageId = new SelectList(db.WeddingPackages, "Id", "Name");
-            return View();
+            var weddingPackage = db.WeddingPackages.ToList();
+            var model = new FunctionViewModel
+            {
+                WeddingPackages = weddingPackage
+            };
+            return View(model);
         }
 
         // POST: Function/Create
@@ -48,8 +60,17 @@ namespace WeddingApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FunctionDate,DateAdded,Notes,WeddingPackageId")] Function function)
+        public ActionResult Create(FunctionViewModel functionVM)
         {
+            var function = new Function
+            {
+                FunctionDate = functionVM.Function.FunctionDate,
+                DateAdded = functionVM.Function.DateAdded,
+                Notes = functionVM.Function.Notes,
+                WeddingPackageId = functionVM.Function.WeddingPackageId,
+                WeddingPackage = functionVM.Function.WeddingPackage
+            };
+            
             if (ModelState.IsValid)
             {
                 db.Functions.Add(function);
@@ -57,8 +78,11 @@ namespace WeddingApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.WeddingPackageId = new SelectList(db.WeddingPackages, "Id", "Name", function.WeddingPackageId);
-            return View(function);
+            functionVM.WeddingPackages = db.WeddingPackages.ToList();
+
+            return View(functionVM);
+
+            
         }
 
         // GET: Function/Edit/5
@@ -73,8 +97,14 @@ namespace WeddingApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.WeddingPackageId = new SelectList(db.WeddingPackages, "Id", "Name", function.WeddingPackageId);
-            return View(function);
+
+            var model = new FunctionViewModel
+            {
+                Function = function,
+                WeddingPackages = db.WeddingPackages.ToList()
+            };
+            
+            return View(model);
         }
 
         // POST: Function/Edit/5
@@ -82,15 +112,26 @@ namespace WeddingApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FunctionDate,DateAdded,Notes,WeddingPackageId")] Function function)
+        public ActionResult Edit(FunctionViewModel functionVM)
         {
+            var function = new Function
+            {
+                Id = functionVM.Function.Id,
+                FunctionDate = functionVM.Function.FunctionDate,
+                DateAdded = functionVM.Function.DateAdded,
+                Notes = functionVM.Function.Notes,
+                WeddingPackageId = functionVM.Function.WeddingPackageId,
+                WeddingPackage = functionVM.Function.WeddingPackage
+            };
+
             if (ModelState.IsValid)
             {
+                
                 db.Entry(function).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.WeddingPackageId = new SelectList(db.WeddingPackages, "Id", "Name", function.WeddingPackageId);
+            functionVM.WeddingPackages = db.WeddingPackages.ToList();
             return View(function);
         }
 
@@ -106,7 +147,14 @@ namespace WeddingApp.Controllers
             {
                 return HttpNotFound();
             }
-            return View(function);
+
+            var model = new FunctionViewModel
+            {
+                Function = function,
+                WeddingPackages = db.WeddingPackages.ToList()
+            };
+
+            return View(model);
         }
 
         // POST: Function/Delete/5
