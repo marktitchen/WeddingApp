@@ -9,7 +9,7 @@ namespace WeddingApp.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(WeddingApp.Models.ApplicationDbContext context)

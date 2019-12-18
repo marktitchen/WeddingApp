@@ -186,17 +186,14 @@
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WeddingDetailController.cs" />
     <Compile Include="Controllers\WeddingPackageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912141130133_AddFunctionAndWeddingPackagesClass.cs" />
-    <Compile Include="Migrations\201912141130133_AddFunctionAndWeddingPackagesClass.Designer.cs">
-      <DependentUpon>201912141130133_AddFunctionAndWeddingPackagesClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912151924355_AddEnquiryAndEnquiryCategoryClass.cs" />
-    <Compile Include="Migrations\201912151924355_AddEnquiryAndEnquiryCategoryClass.Designer.cs">
-      <DependentUpon>201912151924355_AddEnquiryAndEnquiryCategoryClass.cs</DependentUpon>
+    <Compile Include="Migrations\201912171844274_CreateDB.cs" />
+    <Compile Include="Migrations\201912171844274_CreateDB.Designer.cs">
+      <DependentUpon>201912171844274_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -207,6 +204,7 @@
     <Compile Include="Models\IndividualButtonPartial.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModel\FunctionViewModel.cs" />
+    <Compile Include="Models\WeddingDetails.cs" />
     <Compile Include="Models\WeddingPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -292,6 +290,11 @@
     <Content Include="Views\Enquiry\Details.cshtml" />
     <Content Include="Views\Enquiry\Edit.cshtml" />
     <Content Include="Views\Enquiry\Index.cshtml" />
+    <Content Include="Views\WeddingDetail\Create.cshtml" />
+    <Content Include="Views\WeddingDetail\Delete.cshtml" />
+    <Content Include="Views\WeddingDetail\Details.cshtml" />
+    <Content Include="Views\WeddingDetail\Edit.cshtml" />
+    <Content Include="Views\WeddingDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,11 +313,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912141130133_AddFunctionAndWeddingPackagesClass.resx">
-      <DependentUpon>201912141130133_AddFunctionAndWeddingPackagesClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912151924355_AddEnquiryAndEnquiryCategoryClass.resx">
-      <DependentUpon>201912151924355_AddEnquiryAndEnquiryCategoryClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912171844274_CreateDB.resx">
+      <DependentUpon>201912171844274_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

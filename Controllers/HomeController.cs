@@ -56,5 +56,12 @@ namespace WeddingApp.Controllers
 
 			return View();
 		}
+
+		public ActionResult WeddingDetail()
+		{
+
+
+			return View();
+		}
 	}
 }

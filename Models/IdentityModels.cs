@@ -32,6 +32,7 @@ namespace WeddingApp.Models
         public DbSet<Function> Functions { get; set; }
         public DbSet<Enquiry> Enquiries { get; set; }
         public DbSet<EnquiryCategory> EnquiryCategories { get; set; }
+        public DbSet<WeddingDetails> WeddingDetails { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -1,0 +1,112 @@
+﻿@model WeddingApp.Models.WeddingDetails
+
+@{
+	ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h3>Delete Enquiry</h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="row" style="border:1px solid #bbb9b9; border-radius:5px;padding-top:25px;">
+            <div class="col-sm-10">
+                <fieldset disabled>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.WeddingPackageId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.WeddingPackageId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.WeddingPackageId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NoOfGuest, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NoOfGuest, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NoOfGuest, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Fee, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Fee, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Fee, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-sm-2">
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+                @Html.Partial("_BackToListButtonPartial")
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+@*@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>WeddingDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WeddingPackage.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeddingPackage.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfGuest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfGuest)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>*@
